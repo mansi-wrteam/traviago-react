@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import BlogSection from './Components/BlogSection';
+import DestinationsSection from './Components/DestinationsSection';
+import Footer from './Components/Footer';
+import HomeSection from './Components/HomeSection';
+import Navbar from './Components/Navbar';
+import SearchSection from './Components/SearchSection';
+import StepsSection from './Components/StepsSection';
+import TestimonialSection from './Components/TestimonialSection';
+import ToursSection from './Components/ToursSection';
+import TrendingSection from './Components/TrendingSection';
+import useActiveSection from './hooks/useActiveSection';
 
 function App() {
+  const activeSection = useActiveSection(["home", "destinations", "tours", "footer"]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+      <Navbar activeSection={activeSection} />
+      <main>
+        <HomeSection />
+        <SearchSection />
+        <DestinationsSection />
+        <StepsSection />
+        <ToursSection />
+        <TrendingSection />
+        <TestimonialSection />
+        <BlogSection />
+        <Footer />
+      </main>
+    </>
   );
 }
 
