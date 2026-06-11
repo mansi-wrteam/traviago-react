@@ -6,15 +6,6 @@ import useWindowWidth from '../hooks/useWindowWidth';
 const TrendingSection = () => {
     const isMobile = useWindowWidth() <= 1024;
 
-    const gridClass = {
-        small: "h-[307px]",
-        tall: "h-[644px] row-span-2",
-        wide: "col-span-2 h-[307px]",
-        sm2: "h-[307px]",
-        sm3: "h-[307px]",
-        sm4: "h-[307px]",
-    };
-
     return (
         <section id="trending" className="bg-white pt-20 max-lg:pt-14">
             <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
@@ -34,7 +25,7 @@ const TrendingSection = () => {
                         {trendingGrid.map((g, i) => (
                             <div
                                 key={i}
-                                className={`relative overflow-hidden rounded-[24px] bg-hover-color ${gridClass[g.cls]}`}
+                                className={`relative overflow-hidden rounded-[24px] bg-hover-color ${g.class}`}
                             >
                                 <div className='gradient-background' />
                                 <img src={g.img} alt={g.name} className="w-full h-full object-cover block" />

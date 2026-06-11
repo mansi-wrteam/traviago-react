@@ -39,12 +39,12 @@ export const tours = [
 ]
 
 export const trendingGrid = [
-    { img: "assets/Trending/Paris.jpg", name: "Paris, France", rating: "4.8", cls: "small" },
-    { img: "assets/Trending/England.jpg", name: "London, England", rating: "4.9", cls: "tall" },
-    { img: "assets/Trending/Barcelona.jpg", name: "Barcelona, Spain", rating: "4.7", cls: "wide" },
-    { img: "assets/Trending/Rome.jpg", name: "Rome, Italy", rating: "4.6", cls: "sm2" },
-    { img: "assets/Trending/Berlin.jpg", name: "Berlin, Germany", rating: "4.5", cls: "sm3" },
-    { img: "assets/Trending/Athens.jpg", name: "Athens, Greece", rating: "4.4", cls: "sm4" },
+    { img: "assets/Trending/Paris.jpg", name: "Paris, France", rating: "4.8", cls: "small", class: "h-[307px]" },
+    { img: "assets/Trending/England.jpg", name: "London, England", rating: "4.9", cls: "tall", class: "h-[644px] row-span-2" },
+    { img: "assets/Trending/Barcelona.jpg", name: "Barcelona, Spain", rating: "4.7", cls: "wide", class: "col-span-2 h-[307px]" },
+    { img: "assets/Trending/Rome.jpg", name: "Rome, Italy", rating: "4.6", cls: "sm2", class: "h-[307px]" },
+    { img: "assets/Trending/Berlin.jpg", name: "Berlin, Germany", rating: "4.5", cls: "sm3", class: "h-[307px]" },
+    { img: "assets/Trending/Athens.jpg", name: "Athens, Greece", rating: "4.4", cls: "sm4", class: "h-[307px]" },
 ]
 
 export const testimonials = [

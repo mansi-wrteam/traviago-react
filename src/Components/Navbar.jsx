@@ -38,7 +38,7 @@ const Navbar = ({ activeSection }) => {
         <>
             <header
                 className={`fixed top-0 left-0 w-full h-[80px] flex items-center z-[1000] transition-all duration-200
-          ${isHome ? "bg-transparent" : "bg-white shadow-[0_1px_10px_rgba(0,0,0,0.08)] border-black/[0.06]"}`}
+                ${isHome ? "bg-transparent" : "bg-white shadow-[0_1px_10px_rgba(0,0,0,0.08)] border-black/[0.06]"}`}
             >
                 <div className="flex justify-between items-center w-full max-w-[1320px] mx-auto relative md:top-2.5 px-0 max-xl:px-2.5">
                     <img
@@ -65,8 +65,8 @@ const Navbar = ({ activeSection }) => {
                                     <a
                                         href={l.href}
                                         className={`block text-base font-medium transition-colors duration-200 
-                      ${isHome ? "text-white" : "text-nav-text"}
-                      ${activeSection === l.id ? "!text-primary font-bold" : "hover:!text-primary"}`}
+                                            ${isHome ? "text-white" : "text-nav-text"}
+                                            ${activeSection === l.id ? "!text-primary font-bold" : "hover:!text-primary"}`}
                                     >
                                         {l.label}
                                     </a>
@@ -98,8 +98,8 @@ const Navbar = ({ activeSection }) => {
 
             <nav
                 className={`fixed top-0 right-0 w-[280px] h-dvh z-[1100] bg-white shadow-[-4px_0_30px_rgba(0,0,0,0.15)] flex flex-col overflow-y-auto
-          transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]
-          ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+                    transition-transform duration-300
+                    ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
                 <div className="flex items-center justify-between px-5 py-[20px] pb-4 border-b border-border-color flex-shrink-0">
                     <img src="./assets/DarkLogo.png" alt="Brand Logo" className="w-[110px] object-contain" />
@@ -118,7 +118,7 @@ const Navbar = ({ activeSection }) => {
                                 href={l.href}
                                 onClick={() => setMenuOpen(false)}
                                 className={`flex items-center px-6 py-5 text-nav-text text-[18px] font-medium hover:bg-hover-color transition-colors
-                  ${activeSection === l.id ? "!text-primary font-bold" : ""}`}
+                                    ${activeSection === l.id ? "!text-primary font-bold" : ""}`}
                             >
                                 {l.label}
                             </a>
