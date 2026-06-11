@@ -10,6 +10,61 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.16%, rgba(0, 0, 0, 0.76) 92.67%);
     opacity: 1;
   }
+
+  .home-overlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(180deg, rgba(32, 35, 38, 0.35) 9.63%, rgba(32, 35, 38, 0) 38.5%);
+  }
+
+  .trending-grid {
+    display: grid;
+    grid-template-columns: 2fr 2.7fr 1.5fr 1.8fr;
+    gap: 30px;
+    grid-column: 1/-1;
+  }
+
+  .scroll-width-none {
+    scrollbar-width: none;
+  }
+
+  .fade {
+    animation: fade 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .trending-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .trending-grid>div {
+      height: 280px !important;
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .trending-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 12px !important;
+    }
+
+    .trending-grid>div {
+      height: 180px !important;
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+  }
 }
 
 *,

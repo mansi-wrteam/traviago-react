@@ -40,7 +40,7 @@ const Navbar = ({ activeSection }) => {
                 className={`fixed top-0 left-0 w-full h-[80px] flex items-center z-[1000] transition-all duration-200
           ${isHome ? "bg-transparent" : "bg-white shadow-[0_1px_10px_rgba(0,0,0,0.08)] border-black/[0.06]"}`}
             >
-                <div className="flex justify-between items-center w-full max-w-[1320px] mx-auto relative md:top-[10px] px-0 max-xl:px-[10px]">
+                <div className="flex justify-between items-center w-full max-w-[1320px] mx-auto relative md:top-2.5 px-0 max-xl:px-2.5">
                     <img
                         src={isHome ? "./assets/Logo.png" : "./assets/DarkLogo.png"}
                         alt="Brand Logo"

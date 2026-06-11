@@ -5,7 +5,7 @@ const StepsSection = () => {
 
     return (
         <section id="steps" className="bg-white py-20 max-lg:py-14">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px]">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
                 <div className="flex justify-between gap-[30px] max-sm:flex-col max-sm:gap-5 max-xl:gap-6">
                     <div className="w-1/2 max-sm:w-full">
                         <div className="flex flex-col max-w-[555px]">

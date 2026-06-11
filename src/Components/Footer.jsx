@@ -6,10 +6,10 @@ const Footer = () => {
 
     return (
         <footer id="footer" className="bg-dark text-white max-sm:pt-5">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px]">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
                 <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-[30px] max-sm:gap-[22px]">
                     <div className="py-12 max-sm:py-[14px]">
-                        <div className="flex items-center gap-[10px] mb-8">
+                        <div className="flex items-center gap-2.5 mb-8">
                             <img src="assets/Logo.png" alt="logo" className=" object-contain" />
                         </div>
                         <span className="text-base leading-6 opacity-75 max-sm:text-sm max-sm:leading-[22px]">
@@ -35,7 +35,7 @@ const Footer = () => {
                         {footerColumns.map(col => (
                             <div className="max-sm:mt-0 mt-16">
                                 <span
-                                    className="block mb-6 text-[20px] leading-6 font-bold text-white max-sm:text-base  max-sm:mb-0"
+                                    className="block mb-6 text-[20px] leading-6 font-bold text-white max-sm:text-base max-sm:mb-0"
                                 >
                                     {col.heading}
                                 </span>
@@ -52,7 +52,7 @@ const Footer = () => {
 
                     <div className="max-sm:mt-0 max-sm:mb-6 mt-16">
                         <span
-                            className="block mb-6 text-[20px] leading-6 font-bold text-white max-sm:text-base  max-sm:mb-0"
+                            className="block mb-6 text-[20px] leading-6 font-bold text-white max-sm:text-base max-sm:mb-0"
                         >
                             Newsletter
                         </span>
@@ -76,11 +76,11 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="border-t border-[#3A4C59] py-[24px] flex justify-between items-center flex-wrap max-sm:flex-col max-sm:text-center max-sm:py-[10px] gap-2">
+                <div className="border-t border-[#3A4C59] py-6 flex justify-between items-center flex-wrap max-sm:flex-col max-sm:text-center max-sm:py-2.5 gap-2">
                     <span className="text-white text-base max-sm:text-sm font-medium">Copyright © Travel 2024. All Rights Reserved</span>
                     <div className="opacity-75 flex items-center">
                         <button className="text-white text-base max-sm:text-sm font-medium hover:text-primary">Terms of use</button>
-                        <span className="mx-[10px] max-sm:mx-[6px] text-white text-base max-sm:text-sm">|</span>
+                        <span className="mx-2.5 max-sm:mx-1.5 text-white text-base max-sm:text-sm">|</span>
                         <button className="text-white text-base max-sm:text-sm font-medium hover:text-primary">Privacy Policies</button>
                     </div>
                 </div>

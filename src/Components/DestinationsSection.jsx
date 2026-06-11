@@ -38,8 +38,8 @@ const DestinationsSection = () => {
     }
 
     return (
-        <section id="destinations" className="bg-warm -mt-20 pt-[121px] max-sm:pt-[130px] scroll-mt-[80px] flex min-h-[653px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px]">
+        <section id="destinations" className="bg-warm -mt-20 pt-[121px] scroll-mt-[80px] flex min-h-[653px]">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
                 <SectionHeading
                     title="Trending Destinations"
                     subtitle="Immerse yourself in the vibrant culture of Trending Destination. Discover hidden gems, delectable cuisine, and unforgettable experiences"
@@ -54,11 +54,10 @@ const DestinationsSection = () => {
                     <div
                         ref={trackRef}
                         onScroll={handleScroll}
-                        className="flex gap-12 max-xl:gap-4 overflow-x-auto scroll-smooth scrollbar-none pb-2"
-                        style={{ scrollSnapType: "x mandatory", scrollbarWidth: "none" }}
+                        className="scroll-width-none flex gap-12 max-xl:gap-4 overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory pb-2"
                     >
                         {destinations.map((d, i) => (
-                            <div key={i} style={{ scrollSnapAlign: "start" }} className="max-xl:flex-[0_0_190px]">
+                            <div key={i} className="snap-start max-xl:flex-[0_0_190px]">
                                 <div className="relative w-[180px] rounded-[8100px] overflow-hidden cursor-pointer group">
                                     <img
                                         src={d.img}

@@ -15,7 +15,7 @@ const TestimonialSection = () => {
 
     return (
         <section className="py-20 max-sm:py-[50px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px] flex gap-[30px] max-lg:flex-col max-sm:flex-col max-sm:gap-7">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5 flex gap-[30px] max-lg:flex-col max-sm:flex-col max-sm:gap-7">
                 <div className="flex flex-col gap-12 max-sm:gap-7 flex-1 min-w-0">
                     <span className="text-[40px] max-sm:text-[30px] leading-[48px] max-sm:leading-[38px] font-bold">
                         What our customers are <br className="hidden xl:inline" /> saying us?

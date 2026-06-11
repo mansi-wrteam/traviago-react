@@ -33,7 +33,7 @@ const ToursSection = () => {
 
     return (
         <section id="tours" className="bg-warm py-20 max-lg:py-14 scroll-mt-[80px] flex min-h-[653px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px]">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
                 <SectionHeading
                     title="Popular Tour Packages"
                     subtitle="Immerse yourself in diverse cultures, breathtaking landscapes, and unforgettable experiences. Your global adventure awaits."
@@ -47,8 +47,7 @@ const ToursSection = () => {
                 <div
                     ref={sliderRef}
                     onScroll={handleScroll}
-                    className="flex gap-[30px] overflow-x-auto scroll-smooth scrollbar-none mt-12 max-xl:mt-8"
-                    style={{ scrollbarWidth: "none" }}
+                    className="scroll-width-none flex gap-[30px] overflow-x-auto scroll-smooth scrollbar-none mt-12 max-sm:mt-6 max-xl:mt-8"
                 >
                     {tours.map((t, i) => (
                         <div key={i} className="max-w-[420px] bg-white rounded-[22px] p-4 overflow-hidden flex-shrink-0 w-full hover:shadow-[0_7px_28px_2px_rgba(150,150,161,0.14)] transition-shadow">

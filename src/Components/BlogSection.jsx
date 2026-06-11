@@ -10,8 +10,8 @@ const BlogSection = () => {
     }
 
     return (
-        <section className="bg-warm py-20 max-sm:py-[50px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-[10px]">
+        <section className="bg-warm py-20 max-lg:py-[50px]">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
                 <SectionHeading title="The Travel Blog" subtitle="Get inspired, informed, and entertained with our travel stories, tips, and guides.">
                     <div className="flex gap-4 items-center flex-1 justify-end max-sm:justify-start max-sm:hidden">
                         <ArrowBtn dir="left" />
@@ -19,7 +19,7 @@ const BlogSection = () => {
                     </div>
                 </SectionHeading>
 
-                <div className="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-[30px] mt-12 max-sm:mt-7">
+                <div className="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-[30px] mt-12 max-sm:mt-6 max-xl:mt-8">
                     {blogs.map((b, i) => (
                         <div key={i} className="w-full bg-white rounded-[22px] p-4 flex flex-col gap-4 overflow-hidden hover:shadow-[0_7px_28px_2px_rgba(150,150,161,0.14)] max-sm:max-w-full max-sm:gap-0 transition-shadow">
                             <div>
@@ -46,7 +46,7 @@ const BlogSection = () => {
                 </div>
 
                 <div className="flex items-center justify-center">
-                    <button className="inline-flex items-center justify-center gap-1 px-4 py-2 text-primary bg-white border border-primary rounded-[24px] text-[20px] max-sm:text-base leading-[30px] mt-12 cursor-pointer hover:bg-primary hover:text-white transition-all">
+                    <button className="inline-flex items-center justify-center gap-1 px-4 py-2 text-primary bg-white border border-primary rounded-3xl text-[20px] max-sm:text-base leading-[30px] mt-12 cursor-pointer hover:bg-primary hover:text-white transition-all">
                         View All Blogs <i className="bx bx-right-arrow-alt"></i>
                     </button>
                 </div>
