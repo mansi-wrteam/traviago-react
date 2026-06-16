@@ -17,7 +17,7 @@ const Footer = () => {
                         </span>
                         <div className="flex mt-6 gap-6 max-sm:gap-5">
                             {footerSocialIcons.map(s => (
-                                <a key={s.icon} href={s.href} target="_blank"
+                                <a key={s.icon} href={s.href} target="_blank" rel="noreferrer"
                                     className="w-10 h-10 max-sm:w-9 max-sm:h-9 bg-[#2a2f38] flex items-center justify-center rounded-lg text-white hover:bg-primary transition-colors">
                                     <i className={`bx ${s.icon} text-2xl max-sm:text-[20px]`}></i>
                                 </a>
