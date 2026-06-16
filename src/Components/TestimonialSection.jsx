@@ -15,7 +15,7 @@ const TestimonialSection = () => {
 
     return (
         <section className="py-20 max-sm:py-[50px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5 flex gap-[30px] max-lg:flex-col max-sm:flex-col max-sm:gap-7">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-3 flex gap-[30px] max-lg:flex-col max-sm:flex-col max-sm:gap-7">
                 <div className="flex flex-col gap-12 max-sm:gap-7 flex-1 min-w-0">
                     <span className="text-[40px] max-sm:text-[30px] leading-[48px] max-sm:leading-[38px] font-bold">
                         What our customers are <br className="hidden xl:inline" /> saying us?
@@ -25,7 +25,7 @@ const TestimonialSection = () => {
                     </span>
                     <div className="flex gap-12 max-sm:flex-wrap max-sm:gap-3 max-sm:justify-center">
                         {[{ val: "8.5M+", lbl: "Happy Customers" }, { val: "4.8 ★", lbl: "Overall Rating" }].map(s => (
-                            <div key={s.lbl} className="bg-border-color p-4 rounded-[12px] min-w-[120px] flex flex-col gap-2 max-sm:flex-1 max-sm:text-center">
+                            <div key={s.lbl} className="bg-border-color p-4 rounded-xl min-w-[120px] flex flex-col gap-2 max-sm:flex-1 max-sm:text-center">
                                 <span className="text-[28px] max-sm:text-[22px] leading-[34px] font-bold">{s.val}</span>
                                 <span className="text-base leading-6 font-medium text-muted">{s.lbl}</span>
                             </div>

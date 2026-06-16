@@ -20,7 +20,6 @@
     display: grid;
     grid-template-columns: 2fr 2.7fr 1.5fr 1.8fr;
     gap: 30px;
-    grid-column: 1/-1;
   }
 
   .scroll-width-none {

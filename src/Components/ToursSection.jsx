@@ -27,13 +27,13 @@ const ToursSection = () => {
         const el = sliderRef.current;
         if (!el || !el.children[0]) return;
         const cardW = el.children[0].getBoundingClientRect().width + 24;
-        el.scrollTo({ left: p * getVisible() * cardW + p * 5.5, behavior: "smooth" });
+        el.scrollTo({ left: p * (getVisible() * cardW + 5.5), behavior: "smooth" });
         setDotPage(p);
     }
 
     return (
         <section id="tours" className="bg-warm py-20 max-lg:py-14 scroll-mt-[80px] flex min-h-[653px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-3">
                 <SectionHeading
                     title="Popular Tour Packages"
                     subtitle="Immerse yourself in diverse cultures, breathtaking landscapes, and unforgettable experiences. Your global adventure awaits."
@@ -50,7 +50,7 @@ const ToursSection = () => {
                     className="scroll-width-none flex gap-[30px] overflow-x-auto scroll-smooth scrollbar-none mt-12 max-sm:mt-6 max-xl:mt-8"
                 >
                     {tours.map((t, i) => (
-                        <div key={i} className="max-w-[420px] bg-white rounded-[22px] p-4 overflow-hidden flex-shrink-0 w-full hover:shadow-[0_7px_28px_2px_rgba(150,150,161,0.14)] transition-shadow">
+                        <div key={i} className="max-w-[420px] bg-white rounded-[30px] p-4 overflow-hidden flex-shrink-0 w-full hover:shadow-md transition-shadow">
                             <div className="relative">
                                 <img src={t.img} alt={t.title} className="w-full h-[295px] object-cover rounded-[14px]" />
                                 <span

@@ -19,7 +19,7 @@ export function Dots({ total, active, onChange }) {
                     key={i}
                     onClick={() => onChange(i)}
                     className={`h-2 rounded-full transition-all duration-200 flex-shrink-0 ${i === active
-                            ? "bg-primary w-[22px] rounded-[4px]"
+                            ? "bg-primary w-[22px] rounded-md"
                             : "w-2 bg-[#D8E0E6]"
                         }`}
                 />

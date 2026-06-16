@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import useWindowWidth from '../hooks/useWindowWidth';
 import { slides } from '../constants';
 
@@ -6,9 +6,9 @@ const HomeSection = () => {
     const [current, setCurrent] = useState(0);
     const isMobile = useWindowWidth() <= 767;
 
-    const go = useCallback((n) => {
+    const go = (n) => {
         setCurrent((n + slides.length) % slides.length);
-    }, []);
+    };
 
     return (
         <section
@@ -18,7 +18,7 @@ const HomeSection = () => {
             {slides.map((s, i) => (
                 <div
                     key={i}
-                    className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ${i === current ? "opacity-100" : "opacity-0"} ${i === current ? "fade" : ""}`}
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-[1500ms] ${i === current ? "opacity-100 fade" : "opacity-0"}`}
                 >
                     <img src={s.bgImage} alt="" className="absolute inset-0 w-full h-full object-cover object-center max-sm:object-top" />
                     <div className="absolute inset-0 opacity-100 home-overlay" />
@@ -54,7 +54,7 @@ const HomeSection = () => {
                             key={i}
                             onClick={() => setCurrent(i)}
                             className={`h-2 rounded-full transition-all duration-200 flex-shrink-0 border border-white/80
-                  ${i === current ? "bg-white w-[22px] rounded-[4px]" : "bg-white/50 w-2"}`}
+                            ${i === current ? "bg-white w-[22px] rounded" : "bg-white/50 w-2"}`}
                         />
                     ))}
                 </div>

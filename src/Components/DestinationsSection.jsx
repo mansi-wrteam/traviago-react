@@ -39,7 +39,7 @@ const DestinationsSection = () => {
 
     return (
         <section id="destinations" className="bg-warm -mt-20 pt-[121px] scroll-mt-[80px] flex min-h-[653px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-3">
                 <SectionHeading
                     title="Trending Destinations"
                     subtitle="Immerse yourself in the vibrant culture of Trending Destination. Discover hidden gems, delectable cuisine, and unforgettable experiences"
@@ -62,9 +62,9 @@ const DestinationsSection = () => {
                                     <img
                                         src={d.img}
                                         alt={d.name}
-                                        className="w-full h-[260px] object-cover block rounded-[12px] transition-transform duration-200 group-hover:scale-105"
+                                        className="w-full h-[260px] object-cover block rounded-xl transition-transform duration-200 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center bg-transparent opacity-0 group-hover:opacity-100 group-hover:bg-black/35 transition-all duration-200 backdrop-blur-[4px] rounded-[12px] pointer-events-none">
+                                    <div className="absolute inset-0 flex items-center justify-center bg-transparent opacity-0 group-hover:opacity-100 group-hover:bg-black/35 transition-all duration-200 backdrop-blur-sm rounded-xl pointer-events-none">
                                         <span className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-white text-white text-[32px] rotate-[-50deg]">→</span>
                                     </div>
                                 </div>

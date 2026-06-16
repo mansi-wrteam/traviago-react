@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { footerColumns } from '../constants';
+import { footerColumns, footerSocialIcons } from '../constants';
 
 const Footer = () => {
     const [email, setEmail] = useState("");
 
     return (
         <footer id="footer" className="bg-dark text-white max-sm:pt-5">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-3">
                 <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-[30px] max-sm:gap-[22px]">
                     <div className="py-12 max-sm:py-[14px]">
                         <div className="flex items-center gap-2.5 mb-8">
@@ -16,15 +16,9 @@ const Footer = () => {
                             We're passionate travel experts dedicated to curating unforgettable journeys. With years of experience, we've perfected the art of crafting tailor-made itineraries that cater to every dream.
                         </span>
                         <div className="flex mt-6 gap-6 max-sm:gap-5">
-                            {[
-                                { icon: "bxl-facebook-circle", href: "https://www.facebook.com/wrteam.in/" },
-                                { icon: "bxl-instagram-alt", href: "https://www.instagram.com/wrteam.in/" },
-                                { icon: "bxl-linkedin-square", href: "https://www.linkedin.com/company/wrteam/" },
-                                { icon: "bxl-youtube", href: "https://www.youtube.com/channel/UCLt9XRUuiWsqKng4681_6cQ" },
-                                { icon: "bxl-pinterest", href: "#" },
-                            ].map(s => (
-                                <a key={s.icon} href={s.href} target="_blank" rel="noreferrer"
-                                    className="w-10 h-10 max-sm:w-9 max-sm:h-9 bg-[#2a2f38] flex items-center justify-center rounded-[6px] text-white hover:bg-primary transition-colors">
+                            {footerSocialIcons.map(s => (
+                                <a key={s.icon} href={s.href} target="_blank"
+                                    className="w-10 h-10 max-sm:w-9 max-sm:h-9 bg-[#2a2f38] flex items-center justify-center rounded-lg text-white hover:bg-primary transition-colors">
                                     <i className={`bx ${s.icon} text-2xl max-sm:text-[20px]`}></i>
                                 </a>
                             ))}
@@ -32,8 +26,8 @@ const Footer = () => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-[30px] max-sm:gap-[22px]">
-                        {footerColumns.map(col => (
-                            <div className="max-sm:mt-0 mt-16">
+                        {footerColumns.map((col, i) => (
+                            <div className="max-sm:mt-0 mt-16" key={i}>
                                 <span
                                     className="block mb-6 text-[20px] leading-6 font-bold text-white max-sm:text-base max-sm:mb-0"
                                 >
@@ -41,8 +35,8 @@ const Footer = () => {
                                 </span>
                                 <div className="block mt-4">
                                     <ul>
-                                        {col.sub.map(l => (
-                                            <li key={l} className="mb-[15px]"><button className="text-white opacity-75 font-medium text-base max-sm:text-sm hover:text-primary transition-colors cursor-pointer">{l}</button></li>
+                                        {col.sub.map((l, i) => (
+                                            <li key={i} className="mb-[15px]"><button className="text-white opacity-75 font-medium text-base max-sm:text-sm hover:text-primary transition-colors cursor-pointer">{l}</button></li>
                                         ))}
                                     </ul>
                                 </div>
@@ -57,10 +51,10 @@ const Footer = () => {
                             Newsletter
                         </span>
                         <div className="block mt-4">
-                            <p className='text-white opacity-75 font-medium text-base max-sm:text-sm leading-6 mb-5'>
+                            <p className="text-white opacity-75 font-medium text-base max-sm:text-sm leading-6 mb-5">
                                 Receive latest news, updates and many more things every week.
                             </p>
-                            <div className="flex border border-[#A5B7C4] rounded-[6px] overflow-hidden opacity-75">
+                            <div className="flex border border-[#A5B7C4] rounded-md overflow-hidden opacity-75">
                                 <input
                                     type="email"
                                     placeholder="Enter Your email address"
@@ -68,7 +62,7 @@ const Footer = () => {
                                     onChange={e => setEmail(e.target.value)}
                                     className="flex-1 border-none outline-none ml-4 bg-dark text-sub-muted text-sm"
                                 />
-                                <div className="w-[38px] h-[38px] m-[5px] flex justify-center items-center rounded-[4px] bg-primary text-white cursor-pointer text-[22px]">
+                                <div className="w-[38px] h-[38px] m-[5px] flex justify-center items-center rounded bg-primary text-white cursor-pointer text-[22px]">
                                     <i className="bx bx-send"></i>
                                 </div>
                             </div>

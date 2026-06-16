@@ -1,3 +1,10 @@
+export const navLinks = [
+    { href: "#home", label: "Home", id: "home" },
+    { href: "#", label: "About Us", id: null },
+    { href: "#destinations", label: "Destinations", id: "destinations" },
+    { href: "#tours", label: "Tours", id: "tours" },
+];
+
 export const slides = [
     { bgImage: "/assets/Backgrounds/Background.jpg" },
     { bgImage: "/assets/Backgrounds/Background2.jpg" },
@@ -61,5 +68,13 @@ export const blogs = [
 
 export const footerColumns = [
     { heading: "About Company", sub: ["About Us", "FAQs", "Blogs", "Site Map"] },
-    { heading: "Support", sub: ["Get in touch", "Help Center", "Feedback", "Contact Us"]}
+    { heading: "Support", sub: ["Get in touch", "Help Center", "Feedback", "Contact Us"] }
+]
+
+export const footerSocialIcons = [
+    { icon: "bxl-facebook-circle", href: "https://www.facebook.com/wrteam.in/" },
+    { icon: "bxl-instagram-alt", href: "https://www.instagram.com/wrteam.in/" },
+    { icon: "bxl-linkedin-square", href: "https://www.linkedin.com/company/wrteam/" },
+    { icon: "bxl-youtube", href: "https://www.youtube.com/channel/UCLt9XRUuiWsqKng4681_6cQ" },
+    { icon: "bxl-pinterest", href: "#" },
 ]

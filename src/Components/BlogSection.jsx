@@ -11,7 +11,7 @@ const BlogSection = () => {
 
     return (
         <section className="bg-warm py-20 max-lg:py-[50px]">
-            <div className="w-full max-w-[1320px] mx-auto max-xl:px-2.5">
+            <div className="w-full max-w-[1320px] mx-auto max-xl:px-3">
                 <SectionHeading title="The Travel Blog" subtitle="Get inspired, informed, and entertained with our travel stories, tips, and guides.">
                     <div className="flex gap-4 items-center flex-1 justify-end max-sm:justify-start max-sm:hidden">
                         <ArrowBtn dir="left" />
@@ -21,16 +21,16 @@ const BlogSection = () => {
 
                 <div className="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-[30px] mt-12 max-sm:mt-6 max-xl:mt-8">
                     {blogs.map((b, i) => (
-                        <div key={i} className="w-full bg-white rounded-[22px] p-4 flex flex-col gap-4 overflow-hidden hover:shadow-[0_7px_28px_2px_rgba(150,150,161,0.14)] max-sm:max-w-full max-sm:gap-0 transition-shadow">
+                        <div key={i} className="w-full bg-white rounded-[30px] p-4 flex flex-col gap-4 overflow-hidden hover:shadow-lg max-sm:max-w-full max-sm:gap-2 transition-shadow">
                             <div>
                                 <img src={b.img} alt="blog" className="w-full h-[200px] object-cover rounded-[14px]" />
                             </div>
                             <div className="flex flex-col">
-                                <div className="mt-4">
-                                    <span className="text-[20px] max-sm:text-[18px] leading-6 font-bold text-dark hover:text-primary cursor-pointer transition-colors">{b.title}</span>
+                                <div>
+                                    <span className="text-xl max-sm:text-[18px] leading-6 font-bold text-dark hover:text-primary cursor-pointer transition-colors">{b.title}</span>
                                 </div>
                                 <span
-                                    className={`text-base leading-6 text-muted font-medium mt-4 ${expanded.includes(i) ? "block" : "[-webkit-line-clamp:2] [-webkit-box-orient:vertical] [display:-webkit-box] overflow-hidden"}`}
+                                    className={`text-base leading-6 text-muted font-medium mt-4 ${expanded.includes(i) ? "block" : "line-clamp-2"}`}
                                 >
                                     {b.text}
                                 </span>

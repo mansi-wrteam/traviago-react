@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import { navLinks } from '../constants';
 
-const Navbar = ({ activeSection }) => {
+const Navbar = () => {
     const [isHome, setIsHome] = useState(true);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
         function onScroll() {
-            const homeEl = document.getElementById("home");
-            if (!homeEl) return;
-            const bottom = homeEl.getBoundingClientRect().bottom;
-            setIsHome(bottom > 80 + 20);
+            const homeElement = document.getElementById("home");
+            if (!homeElement) return;
+            const bottom = homeElement.getBoundingClientRect().bottom;
+            setIsHome(bottom > 100);
         }
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
@@ -17,30 +19,48 @@ const Navbar = ({ activeSection }) => {
     }, []);
 
     useEffect(() => {
-        if (menuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-        return () => { document.body.style.overflow = ""; };
+        document.documentElement.style.overflowY = menuOpen ? "hidden" : "";
     }, [menuOpen]);
 
-    const navLinks = [
-        { href: "#home", label: "Home", id: "home" },
-        { href: "#", label: "About Us", id: null },
-        { href: "#destinations", label: "Destinations", id: "destinations" },
-        { href: "#tours", label: "Tours", id: "tours" },
-    ];
+    const handleNavClick = (id) => {
+        setActiveSection(id);
+        setMenuOpen(false);
+    };
 
-    const barColor = isHome ? "bg-white" : "bg-[#333]";
+    const renderNavLinks = (mobile = false) =>
+        navLinks.map((l) => (
+            <li
+                key={l.label}
+                className={mobile ? "border-b border-border-color" : ""}
+            >
+                <a
+                    href={l.href}
+                    onClick={() => handleNavClick(l.id)}
+                    className={
+                        mobile
+                            ? `flex items-center px-6 py-5 text-nav-text text-[18px]
+                           font-medium hover:bg-hover-color
+                           ${activeSection === l.id ? "!text-primary font-bold" : ""}`
+                            : `block text-base font-medium transition-colors
+                           ${isHome ? "text-white" : "text-nav-text"}
+                           ${activeSection === l.id
+                                ? "!text-primary font-bold"
+                                : "hover:!text-primary"
+                            }`
+                    }
+                >
+                    {l.label}
+                </a>
+            </li>
+        ));
 
     return (
         <>
             <header
                 className={`fixed top-0 left-0 w-full h-[80px] flex items-center z-[1000] transition-all duration-200
-                ${isHome ? "bg-transparent" : "bg-white shadow-[0_1px_10px_rgba(0,0,0,0.08)] border-black/[0.06]"}`}
+                ${isHome ? "bg-transparent" : "bg-white shadow-md border-black/[0.06]"}`}
             >
-                <div className="flex justify-between items-center w-full max-w-[1320px] mx-auto relative md:top-2.5 px-0 max-xl:px-2.5">
+                <div className="flex justify-between items-center w-full max-w-[1320px] mx-auto relative md:top-2.5 px-0 max-xl:px-3">
                     <img
                         src={isHome ? "./assets/Logo.png" : "./assets/DarkLogo.png"}
                         alt="Brand Logo"
@@ -52,26 +72,13 @@ const Navbar = ({ activeSection }) => {
                         onClick={() => setMenuOpen(open => !open)}
                         aria-label="Toggle navigation"
                     >
-                        <span className={`block w-[25px] h-[3px] mt-[5px] ${barColor} transition-all duration-200 ${menuOpen ? "translate-y-[8px] rotate-45" : ""}`}></span>
-                        <span className={`block w-[25px] h-[3px] mt-[5px] ${barColor} transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`}></span>
-                        <span className={`block w-[25px] h-[3px] mt-[5px] ${barColor} transition-all duration-200 ${menuOpen ? "-translate-y-[8px] -rotate-45" : ""}`}></span>
+                        <i className={`bx ${menuOpen ? "bx-x" : "bx-menu"} text-4xl ${isHome ? "text-white " : "text-[#333]"}`}></i>
                     </button>
 
                     {/* Desktop nav */}
                     <nav className="hidden md:flex items-center flex-row">
                         <ul className="flex items-center flex-row gap-[30px] p-0">
-                            {navLinks.map(l => (
-                                <li key={l.label}>
-                                    <a
-                                        href={l.href}
-                                        className={`block text-base font-medium transition-colors duration-200 
-                                            ${isHome ? "text-white" : "text-nav-text"}
-                                            ${activeSection === l.id ? "!text-primary font-bold" : "hover:!text-primary"}`}
-                                    >
-                                        {l.label}
-                                    </a>
-                                </li>
-                            ))}
+                            {renderNavLinks()}
                         </ul>
                     </nav>
 
@@ -91,13 +98,13 @@ const Navbar = ({ activeSection }) => {
 
             {menuOpen && (
                 <div
-                    className="fixed inset-0 bg-black/45 backdrop-blur-[2px] z-[1099]"
+                    className="fixed inset-0 bg-dark/50 backdrop-blur-[2px] z-[1099]"
                     onClick={() => setMenuOpen(false)}
                 />
             )}
 
             <nav
-                className={`fixed top-0 right-0 w-[280px] h-dvh z-[1100] bg-white shadow-[-4px_0_30px_rgba(0,0,0,0.15)] flex flex-col overflow-y-auto
+                className={`fixed top-0 right-0 w-[280px] h-dvh z-[1100] bg-white shadow-lg flex flex-col overflow-y-auto
                     transition-transform duration-300
                     ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
             >
@@ -112,18 +119,7 @@ const Navbar = ({ activeSection }) => {
                 </div>
 
                 <ul className="flex flex-col">
-                    {navLinks.map(l => (
-                        <li key={l.label} className="border-b border-border-color">
-                            <a
-                                href={l.href}
-                                onClick={() => setMenuOpen(false)}
-                                className={`flex items-center px-6 py-5 text-nav-text text-[18px] font-medium hover:bg-hover-color transition-colors
-                                    ${activeSection === l.id ? "!text-primary font-bold" : ""}`}
-                            >
-                                {l.label}
-                            </a>
-                        </li>
-                    ))}
+                    {renderNavLinks(true)}
                 </ul>
 
                 <div className="mt-auto border-t border-border-color">
